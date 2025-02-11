@@ -1,7 +1,6 @@
-# java-projeto-sudoku
+# Projeto Sudoku
 Desenvolvendo para entrega do Desafio de Projeto Bootcamp Bradesco - Java Cloud Native
 
-classDiagram
     class Jogo {
         -tabuleiro: Tabuleiro
         -jogador: Jogador
