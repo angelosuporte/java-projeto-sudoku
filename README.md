@@ -1,7 +1,7 @@
 # Projeto Sudoku
 Desenvolvendo para entrega do Desafio de Projeto Bootcamp Bradesco - Java Cloud Native
 
-   ``` `mermaid` classDiagram
+   ```mermaid classDiagram
     class Jogo {
         -tabuleiro: Tabuleiro
         -jogador: Jogador
