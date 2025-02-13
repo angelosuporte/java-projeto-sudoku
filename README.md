@@ -13,7 +13,7 @@ O Sudoku é um jogo de lógica que consiste em uma grade de 9x9, dividida em 9 s
 •	Preencher números óbvios: Comece preenchendo os quadrados que são fáceis de deduzir a partir dos números já preenchidos. Às vezes, só um número pode preencher um lugar específico\
 •	Procura de candidatos: Para cada espaço vazio, olhe os números já presentes na linha, coluna e subgrade, e elimine as opções impossíveis. Isso pode ajudar a encontrar o número correto para aquele espaço\
 •	Uso de técnicas avançadas: Para Sudoku mais difíceis, técnicas como "caixas de candidatos" ou "tentativas e erros" podem ser úteis, mas as soluções sempre devem seguir as regras lógicas\
-O Sudoku pode ser encontrado em diversos níveis de dificuldade, desde os mais fáceis até os bem complexos, que exigem mais estratégia e paciência\
+O Sudoku pode ser encontrado em diversos níveis de dificuldade, desde os mais fáceis até os bem complexos, que exigem mais estratégia e paciência
 
 ## Fuxograma básico representando as etapas do jogo:
    ```mermaid
