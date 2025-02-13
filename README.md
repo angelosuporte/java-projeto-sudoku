@@ -18,7 +18,7 @@ graph TD;
 
 ```
 ```mermaid
-graph TD;
+classDiagram
         class Jogo {
         -tabuleiro: Tabuleiro
         -jogador: Jogador
