@@ -1,8 +1,8 @@
 # Projeto Sudoku
 ## Desenvolvendo para entrega do Desafio de Projeto Bootcamp Bradesco - Java Cloud Native
-O Sudoku é um jogo de lógica que consiste em uma grade de 9x9, dividida em 9 subgrupos (ou "caixas") de 3x3. O objetivo do jogo é preencher todos os quadrados da grade com números de 1 a 9, respeitando algumas regras simples:
-**1.**	Cada linha da grade deve conter todos os números de 1 a 9, sem repetição
-**2.**	Cada coluna também deve conter todos os números de 1 a 9, sem repetição
+O Sudoku é um jogo de lógica que consiste em uma grade de 9x9, dividida em 9 subgrupos (ou "caixas") de 3x3. O objetivo do jogo é preencher todos os quadrados da grade com números de 1 a 9, respeitando algumas regras simples:\
+**1.**	Cada linha da grade deve conter todos os números de 1 a 9, sem repetição\
+**2.**	Cada coluna também deve conter todos os números de 1 a 9, sem repetição\
 **3.**	Cada uma das 9 subgrades 3x3 deve conter todos os números de 1 a 9, sem repetição
    
 ### Como jogar:
