@@ -16,7 +16,6 @@ O Sudoku é um jogo de lógica que consiste em uma grade de 9x9, dividida em 9 s
 O Sudoku pode ser encontrado em diversos níveis de dificuldade, desde os mais fáceis até os bem complexos, que exigem mais estratégia e paciência
 
 ## Fuxograma básico representando as etapas do jogo:
-
    ```mermaid
 graph TD;
     A[Início] --> B{Verificar se há células preenchidas};
@@ -30,10 +29,8 @@ graph TD;
     G -->|Sim| H[Fim];
     G -->|Não| C;
     H --> I[Parabéns!];
-
 ```
 ## Diagrama de classes
-
 ```mermaid
 classDiagram
         class Jogo {
