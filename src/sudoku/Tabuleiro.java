@@ -22,4 +22,21 @@ public class Tabuleiro {
 		}
 	}
 	
+	public void preencherCelula(int linha, int coluna, int valor) {
+		if(tabuleiro[linha][coluna].isFixada()) {
+			System.out.println("Essa célula não pode ser alterada.");
+		}else {
+			tabuleiro[linha][coluna].setValor(valor);
+		}
+	}
+	
+	public void mostrarTabuleiro() {
+		for(int i=0; i<9; i++) {
+			for (int j=0; j<9; j++) {
+				System.out.println(tabuleiro[i][j].getValor() + "");
+			}
+			System.out.println();
+		}
+	}
+	
 }
