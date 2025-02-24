@@ -33,10 +33,17 @@ public class Tabuleiro {
 	public void mostrarTabuleiro() {
 		for(int i=0; i<9; i++) {
 			for (int j=0; j<9; j++) {
-				System.out.println(tabuleiro[i][j].getValor() + "");
+				System.out.println(tabuleiro[i][j].getValor() + " ");
 			}
 			System.out.println();
 		}
 	}
+	
+    // Método para validar o tabuleiro (usando a classe Validador)
+    public boolean validarTabuleiro() {
+        Validador validador = new Validador();
+        return validador.validarTabuleiro(this.tabuleiro);
+    }
+
 	
 }
