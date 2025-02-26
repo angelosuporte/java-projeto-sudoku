@@ -4,31 +4,37 @@ public class Jogo {
 	
     private Tabuleiro tabuleiro;
     private Jogador jogador;
+    private Validador validador;
 
     public Jogo() {
-        this.tabuleiro = new Tabuleiro();
-        this.jogador = new Jogador("Jogador 1");
+        tabuleiro = new Tabuleiro();
+        jogador = new Jogador();
+        validador = new Validador();
     }
 
-    // Método para iniciar o jogo
+    // Iniciar o jogo, configurando o tabuleiro e o jogador
     public void iniciarJogo() {
-        System.out.println("Iniciando o jogo...");
-        tabuleiro.resetarTabuleiro();  // Reseta o tabuleiro antes de iniciar
-        jogador = new Jogador("Jogador 1");  // Atribui o jogador
-        System.out.println("Jogo iniciado!");
+        tabuleiro = new Tabuleiro(); // Preenche o tabuleiro com os valores iniciais
+        jogador.getNome();
     }
 
-    // Método para resolver o tabuleiro 
-    public void resolverTabuleiro() {
-        System.out.println("Resolvendo o tabuleiro...");
-        // Aqui poderia ter uma lógica para resolver o tabuleiro (algoritmo de resolução)
-        System.out.println("Tabuleiro resolvido!");
+    // Mostrar o tabuleiro
+    public void mostrarTabuleiro() {
+        tabuleiro.mostrarTabuleiro(); // Método que exibe o tabuleiro
     }
 
-    // Método para verificar se o jogo foi vencido
+    // Verificar se o jogador venceu
     public boolean verificarVitoria() {
-        // Verifica se o tabuleiro está completo e se todas as regras são seguidas
-        return tabuleiro.validarTabuleiro();
+        return validador.validarTabuleiro(tabuleiro.getTabuleiro()); // Valida o tabuleiro completo
+    }
+
+    // Realizar uma jogada
+    public boolean fazerJogada(int linha, int coluna, int valor) {
+        if (validador.validarJogada(tabuleiro.getTabuleiro(), linha, coluna, valor)) {
+            tabuleiro.preencherCelula(linha, coluna, valor);
+            return true;
+        }
+        return false;
     }
 
 

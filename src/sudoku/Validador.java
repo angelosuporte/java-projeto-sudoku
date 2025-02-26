@@ -2,48 +2,43 @@ package sudoku;
 
 public class Validador {
 	
-	public boolean validarLinha(Celula[][] tabuleiro, int linha) {
-		boolean[] visto = new boolean[9];
-		for(int coluna = 0; coluna < 9; coluna++ ) {
-			int valor = tabuleiro[linha][coluna].getValor();
-            if (valor != 0) { 
-                if (visto[valor - 1]) {
-                    return false;  // Se o número já foi visto, é inválido
-                }
-                return visto[valor -1] = true;
-		}
-	}
-		return true;
-	}
-	  // Valida a coluna no tabuleiro
-    public boolean validarColuna(Celula[][] tabuleiro, int coluna) {
-        boolean[] visto = new boolean[9];
-        for (int linha = 0; linha < 9; linha++) {
-            int valor = tabuleiro[linha][coluna].getValor();
-            if (valor != 0) {
-                if (visto[valor - 1]) {
-                    return false;
-                }
-                visto[valor - 1] = true;
+	// Valida se o valor pode ser colocado na célula sem violar as regras
+    public boolean validarJogada(Celula[][] tabuleiro, int linha, int coluna, int valor) {
+        // Verifica se o valor já existe na linha, coluna ou bloco
+        return validarLinha(tabuleiro, linha, valor) &&
+               validarColuna(tabuleiro, coluna, valor) &&
+               validarBloco(tabuleiro, linha, coluna, valor);
+    }
+
+    // Valida a linha
+    private boolean validarLinha(Celula[][] tabuleiro, int linha, int valor) {
+        for (int i = 0; i < 9; i++) {
+            if (tabuleiro[linha][i].getValor() == valor) {
+                return false;
             }
         }
         return true;
     }
-    
-    // Valida o bloco 3x3 no tabuleiro
-    public boolean validarBloco(Celula[][] tabuleiro, int bloco) {
-        boolean[] visto = new boolean[9];
-        int linhaStart = (bloco / 3) * 3;
-        int colunaStart = (bloco % 3) * 3;
 
+    // Valida a coluna
+    private boolean validarColuna(Celula[][] tabuleiro, int coluna, int valor) {
+        for (int i = 0; i < 9; i++) {
+            if (tabuleiro[i][coluna].getValor() == valor) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Valida o bloco 3x3
+    private boolean validarBloco(Celula[][] tabuleiro, int linha, int coluna, int valor) {
+        int linhaStart = (linha / 3) * 3;
+        int colunaStart = (coluna / 3) * 3;
+        
         for (int i = linhaStart; i < linhaStart + 3; i++) {
             for (int j = colunaStart; j < colunaStart + 3; j++) {
-                int valor = tabuleiro[i][j].getValor();
-                if (valor != 0) {
-                    if (visto[valor - 1]) {
-                        return false;
-                    }
-                    visto[valor - 1] = true;
+                if (tabuleiro[i][j].getValor() == valor) {
+                    return false;
                 }
             }
         }
@@ -53,15 +48,10 @@ public class Validador {
     // Valida o tabuleiro inteiro
     public boolean validarTabuleiro(Celula[][] tabuleiro) {
         for (int i = 0; i < 9; i++) {
-            if (!validarLinha(tabuleiro, i) || !validarColuna(tabuleiro, i)) {
-                return false;
-            }
-        }
-
-        // Valida os blocos 3x3
-        for (int i = 0; i < 9; i++) {
-            if (!validarBloco(tabuleiro, i)) {
-                return false;
+            for (int j = 0; j < 9; j++) {
+                if (tabuleiro[i][j].getValor() == 0) {
+                    return false; // Se houver algum valor 0 (não preenchido), o tabuleiro não é válido
+                }
             }
         }
         return true;
