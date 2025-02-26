@@ -7,7 +7,6 @@ public class Jogador {
     public Jogador(String nome) {
         this.nome = nome;
     }
-    
 
     public String getNome() {
 		return nome;
@@ -18,8 +17,7 @@ public class Jogador {
 		this.nome = nome;
 	}
 
-
-	// Método para fazer uma jogada (exemplo simplificado)
+	// Método para fazer uma jogada
     public void fazerJogada(int linha, int coluna, int valor) {
         System.out.println(nome + " fez uma jogada na linha " + linha + ", coluna " + coluna + " com o valor " + valor);
     }
